@@ -84,8 +84,11 @@ namespace ProducerandConsumer
                 time = thisProcess.starttime;
             }
 
-            while (finishthreadnum != runconsumernum + runproducernum) Thread.Sleep(10);
+            while (finishthreadnum != runconsumernum + runproducernum) Thread.Sleep(5);
 
+            Thread.Sleep(500);
+            Action<string> actionDelegate = (x) => { messageTextBox.AppendText(x); };
+            messageTextBox.Invoke(actionDelegate, "执行完成。\r\n\r\n");
             isruning = false;
         }
 
@@ -581,7 +584,7 @@ namespace ProducerandConsumer
         private bool issetpdata = false;
         private bool issetrandom = false;
 
-        //进程执行属性（， 缓冲区执行信号量）
+        //进程执行属性
         private Semaphore[] producersemaphore;                          //线程信号量
         private Semaphore[] consumersemaphore;                          //线程信号量
         private Semaphore mainsemaphore = new Semaphore(1, 1);          //缓冲区执行信号量

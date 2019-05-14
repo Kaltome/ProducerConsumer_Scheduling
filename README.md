@@ -1,7 +1,9 @@
 # 生产者-消费者调度
 
 一个生产者-消费者调度示例程序，通过C#语言运用winform框架实现，来玩玩吧。
+
 ![](https://github.com/Kaltome/ProducerConsumer_Scheduling/blob/master/showing.png)
+
 详细的说明包含在设计方案报告中。
 
 <br/>
